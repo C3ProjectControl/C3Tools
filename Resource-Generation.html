@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resource-Generation – C3 Tool Manual</title>
+  <style>
+    :root {
+      --navy-blue: #163147;
+      --orange: #ed8a15;
+      --light-grey: #b9b9ba;
+      --dark-grey: #474d51;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--light-grey);
+      color: var(--dark-grey);
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: var(--navy-blue);
+      color: var(--white);
+      padding: 20px;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .header-container img {
+      height: 120px;
+      max-width: 120px;
+    }
+
+    .header-container div {
+      flex: 1;
+      text-align: center;
+    }
+
+    .header-container h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    .header-container p {
+      margin: 4px 0 0 0;
+      font-weight: 500;
+      font-size: 1.5rem;
+    }
+
+    nav {
+      width: 240px;
+      background-color: var(--navy-blue);
+      color: var(--white);
+      padding: 30px 15px;
+      box-sizing: border-box;
+      min-height: 100vh;
+    }
+
+    nav h2 {
+      font-size: 18px;
+      margin-top: 0;
+    }
+
+    nav a {
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      text-decoration: none;
+      margin: 12px 0;
+      font-size: 15px;
+      transition: 0.2s;
+      padding-left: 12px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    nav a:hover {
+      color: var(--orange);
+    }
+
+    nav a.active {
+      background-color: var(--orange);
+      color: var(--navy-blue);
+      font-weight: bold;
+      border-left: 4px solid var(--white);
+    }
+
+    nav img {
+      width: 30px;
+      margin-right: 8px;
+    }
+
+    .main-wrapper {
+      display: flex;
+      flex: 1;
+    }
+
+    main {
+      flex: 1;
+      padding: 40px;
+      background-color: var(--white);
+    }
+
+    main header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: var(--navy-blue);
+    }
+
+    main header p {
+      margin: 5px 0 20px;
+      color: var(--dark-grey);
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      color: var(--navy-blue);
+      border-bottom: 2px solid var(--orange);
+      padding-bottom: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table th, table td {
+      border: 1px solid var(--light-grey);
+      padding: 10px;
+      text-align: left;
+    }
+
+    table th {
+      background-color: var(--navy-blue);
+      color: var(--white);
+    }
+
+    ul, ol {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    pre {
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      padding: 15px;
+      overflow-x: auto;
+      font-family: Consolas, monospace;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .note {
+      background-color: #fff3cd;
+      border-left: 6px solid #ffeeba;
+      padding: 10px 15px;
+      margin-top: 15px;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: var(--navy-blue);
+      color: var(--white);
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <img src="images/company-logo.png" alt="Company Logo" />
+      <div>
+        <h1>C3 Tool – User Manual</h1>
+        <p>Resource-Generation</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-wrapper">
+    <nav>
+      <h2>Navigation</h2>
+      <a href="index.html"><img src="icons/home.png" alt="Home icon" />Home</a>
+      <a href="text-case.html"><img src="icons/text.png" alt="Text Case Icon" />Text Case Conversion</a>
+      <a href="Trim-Spaces.html" ><img src="icons/Trim.png" alt="Trim Spaces Icon" />Trim Spaces</a>
+      <a href="C3-Table.html"><img src="icons/C3Table.png" alt="C3 Table Icon" />C3 Table Format</a>
+      <a href="C3-Pivot.html"><img src="icons/C3Pivot.png" alt="C3 Pivot Icon" />C3 Pivot Table Format</a>
+      <a href="New-Week.html"><img src="icons/NewWeek.png" alt="New Week Icon" />New Week AutoUpdate</a>
+      <a href="WBS-Coloring.html"><img src="icons/P6Table.png" alt="WBS Coloring Icon" />WBS Coloring</a>
+      <a href="WBS-Grouping.html"><img src="icons/WBSGrouping.png" alt="WBS Grouping Icon" />WBS Grouping</a>
+      <a href="WBS-Tabular.html"><img src="icons/Tabular.png" alt="WBS Tabular Icon" />WBS Tabular</a>
+      <a href="Gantt-Chart.html"><img src="icons/Gantt.png" alt="Gantt Chart Icon" />Gantt Chart</a>
+      <a href="Color-Setting.html"><img src="icons/Color.png" alt="Color Setting Icon" />Color Setting</a>
+      <a href="Import-XER.html" ><img src="icons/IMPORTXER.png" alt="IMPORT XER Icon" />Import XER</a>
+      <a href="Export-XER.html" ><img src="icons/EXPORTXER.png" alt="Export XER Icon" />Export XER</a>
+      <a href="Resource-Generation.html" class="active"><img src="icons/ResourceGeneration.png" alt="Resource Generation Icon" />Resource Generation</a>
+      <a href="AI-Assistant.html"><img src="icons/AI%20Assistant.png" alt="AI Assistant Icon" />AI Assistant</a>
+    </nav>
+
+</head>
+<main>
+<section>
+  <h2>BreakDown Sheet Generator</h2>
+
+  <p>This module in the <strong>C3 Excel Tool</strong> allows users to generate or update a comprehensive <strong>"BreakDown"</strong> sheet by merging data from two input sources:</p>
+  <ul>
+    <li><strong>QS</strong>: Quantity Survey data containing Cost Account, BOQ Item, Budget Qty, UOM, and Template Code.</li>
+    <li><strong>Database_Temp</strong>: A resource database containing resource details associated with each Template Code.</li>
+  </ul>
+</section>
+<section>
+  <h2>Key Features</h2>
+  <ul>
+    <li>Automatically checks for existing "BreakDown" sheet and updates only new cost accounts.</li>
+    <li>Creates and formats the "BreakDown" sheet if it does not exist.</li>
+    <li>Merges data from <code>QS</code> and <code>Database_Temp</code> based on Template Code.</li>
+    <li>Auto-fits columns for clear visibility.</li>
+    <li>Displays a success message indicating whether it was a creation or update.</li>
+  </ul>
+  </section>
+
+<section>
+  <h2> Input Sheets</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Sheet Name</th>
+        <th>Required Columns</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>QS</strong></td>
+        <td>Cost Account, BOQ Item, Budget Qty, UOM, Template Code</td>
+      </tr>
+      <tr>
+        <td><strong>Database_Temp</strong></td>
+        <td>Template Code, Template Name, Resource Code, Resource Name, RE.U.O.M, Productivity Ref, No. Of Labors, Remarks, Driving Resource, Activity ID</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2> Sample Output Table</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Cost Account</th>
+      <th>BOQ Item</th>
+      <th>Budget Qty</th>
+      <th>UOM</th>
+      <th>Factor</th>
+      <th>Resource Qty</th>
+      <th>Template Code</th>
+      <th>Template Name</th>
+      <th>Resource Code</th>
+      <th>Resource Name</th>
+      <th>RE.U.O.M</th>
+      <th>Productivity Ref</th>
+      <th>No. Of Labors</th>
+      <th>Remarks</th>
+      <th>Driving Resource</th>
+      <th>Activity ID</th>
+      <th>Budget Unit</th>
+      <th>RE UR</th>
+      <th>Budget Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CA-001</td>
+      <td>Concrete Foundation</td>
+      <td>150</td>
+      <td>m³</td>
+      <td></td>
+      <td></td>
+      <td>TMP-1001</td>
+      <td>Concrete Work</td>
+      <td>RC-501</td>
+      <td>Mason</td>
+      <td>m³</td>
+      <td>PRD-001</td>
+      <td>5</td>
+      <td>Standard mix</td>
+      <td>Yes</td>
+      <td>ACT-201</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA-002</td>
+      <td>Block Work</td>
+      <td>320</td>
+      <td>m²</td>
+      <td></td>
+      <td></td>
+      <td>TMP-1002</td>
+      <td>Block Masonry</td>
+      <td>RC-502</td>
+      <td>Bricklayer</td>
+      <td>m²</td>
+      <td>PRD-002</td>
+      <td>3</td>
+      <td>Heavy load</td>
+      <td>No</td>
+      <td>ACT-202</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA-003</td>
+      <td>Formwork</td>
+      <td>100</td>
+      <td>m²</td>
+      <td></td>
+      <td></td>
+      <td>TMP-1003</td>
+      <td>Formwork Assembly</td>
+      <td>RC-503</td>
+      <td>Carpenter</td>
+      <td>m²</td>
+      <td>PRD-003</td>
+      <td>4</td>
+      <td>Shuttering panels</td>
+      <td>Yes</td>
+      <td>ACT-203</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</section>
+
+<section>
+  <h2> How to Use</h2>
+  <ol>
+    <li>Ensure both <code>QS</code> and <code>Database_Temp</code> sheets exist and are filled.</li>
+    <li>From the ribbon, click the <strong>“Generate/Update BreakDown”</strong> button.</li>
+    <li>The tool will:
+      <ul>
+        <li>Check for existing <code>BreakDown</code> sheet or create it.</li>
+        <li>Read and merge data from both sources.</li>
+        <li>Append only new Cost Accounts.</li>
+        <li>Auto-format the result.</li>
+      </ul>
+    </li>
+    <li>A message will confirm whether the sheet was created or updated.</li>
+  </ol>
+  <h2> Important Notes</h2>
+  <ul>
+    <li>If the <code>BreakDown</code> sheet exists, only <strong>new</strong> Cost Accounts from the <code>QS</code> sheet will be appended.</li>
+    <li>Rows with duplicate Cost Accounts are skipped.</li>
+    <li>The tool uses a hidden in-memory collection to track existing entries and prevent duplicates.</li>
+  </ul>
+
+  <div class="note">
+    💡 <strong>Tip:</strong> Before running this tool, ensure that the QS and Database_Temp sheets are up to date and that Cost Account and Template Code values are filled properly. <strong>Always create a copy of your file before running the tool</strong>, as changes are irreversible and Excel has no Undo for macros.
+  </div>
+  </section>
+
+
+
+</main>
+</div>
+  <footer>
+    © 2025 C3 – All rights reserved.
+  </footer>
+</body>
+</html>
