@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Excel Automation Tool – User Manual</title>
+  <style>
+    :root {
+      --navy-blue: #163147;
+      --orange: #ED8A15;
+      --light-grey: #B9B9BA;
+      --dark-grey: #474D51;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: var(--light-grey);
+      color: var(--dark-grey);
+    }
+
+    header {
+      background-color: var(--navy-blue);
+      color: var(--white);
+      padding: 30px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative; /* for absolute logo */
+      min-height: 120px;
+    }
+
+    /* Logo on the far left */
+    header img {
+      position: absolute;
+      left: 20px;
+      height: 120px;
+      max-width: 120px;
+      object-fit: contain;
+    }
+
+    /* Header text centered */
+    header .header-text {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 4px 0 0 0;
+      font-weight: 400;
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .intro {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+      border-left: 6px solid var(--orange);
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+    }
+
+    .module-card {
+      background-color: var(--white);
+      border-radius: 12px;
+      text-align: center;
+      padding: 20px;
+      text-decoration: none;
+      color: var(--navy-blue);
+      font-weight: 600;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    .module-card:hover {
+      background-color: var(--navy-blue);
+      color: var(--white);
+      border-color: var(--orange);
+    }
+
+    .module-card img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .module-title {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    h2 {
+      color: var(--navy-blue);
+      border-bottom: 2px solid var(--orange);
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 700px) {
+      header img {
+        position: static;
+        height: 80px;
+        max-width: 80px;
+        margin-bottom: 10px;
+      }
+
+      header {
+        flex-direction: column;
+        padding: 20px 10px;
+        min-height: auto;
+      }
+
+      header .header-text {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .module-card {
+        font-size: 14px;
+        padding: 16px 10px;
+      }
+
+      .module-card img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+.intro ul {
+  margin: 10px 0 0 20px;
+  padding: 0;
+}
+
+.intro ul li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+
+    footer {
+      background-color: var(--navy-blue);
+      color: var(--white);
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="images/company-logo.png" alt="Company Logo" />
+  <div class="header-text">
+    <h1>C3 Tool – User Manual</h1>
+    <p>by C3 - Project Control Department</p>
+    <p>Developed by Ahmed Elbhairy</p>
+  </div>
+</header>
+
+<div class="container">
+<div class="intro">
+  <h2>About C3 Tools</h2>
+  <p><strong>Introducing C3 Tools</strong> — a powerful Excel add-in developed specifically for project control professionals.</p>
+  <p>Built with the needs of planners, cost controllers, and engineers in mind, C3 Tools enhances Excel with purpose-driven features that help you:</p>
+  <ul>
+    <li>Work faster by eliminating repetitive manual tasks</li>
+    <li>Format smarter with one-click consistency tools</li>
+    <li>Automate more with intelligent routines for daily reporting</li>
+  </ul>
+  <p>This tool was developed in-house by <strong>Ahmed Elbhairy</strong> as part of C3’s Project Control Department’s commitment to innovation and efficiency in reporting workflows.</p>
+</div>
+
+
+  <h2 style="text-align:center;">Explore Tool Features</h2>
+
+  <div class="button-grid">
+    <a href="text-case.html" class="module-card">
+      <img src="icons/text.png" alt="Text Case Icon"/>
+      <div class="module-title">Text Case Conversion</div>
+    </a>
+    <a href="Trim-Spaces.html" class="module-card">
+      <img src="icons/Trim.png" alt="Trim Spaces Icon"/>
+      <div class="module-title">Trim Spaces</div>
+    </a>
+       <a href="C3-Table.html" class="module-card">
+      <img src="icons/C3Table.png" alt="C3 Table Icon"/>
+      <div class="module-title">C3 Table Format</div>
+    </a>
+    </a>
+       <a href="C3-Pivot.html" class="module-card">
+      <img src="icons/C3Pivot.png" alt="C3 Pivot Icon"/>
+      <div class="module-title">C3 Pivot table Format</div>
+    </a>
+    </a>
+       <a href="New-Week.html" class="module-card">
+      <img src="icons/NewWeek.png" alt="New Week Icon"/>
+      <div class="module-title">New Week AutoUpdate</div>
+    </a>
+     </a>
+       <a href="WBS-Grouping.html" class="module-card">
+      <img src="icons/WBSGrouping.png" alt="WBS Grouping Icon"/>
+      <div class="module-title">WBS Grouping</div>
+    </a>
+    </a>
+       <a href="WBS-Tabular.html" class="module-card">
+      <img src="icons/Tabular.png" alt="WBS Tabular Icon"/>
+      <div class="module-title">WBS Tabular</div>
+    </a>
+    </a>
+       <a href="Gantt-Chart.html" class="module-card">
+      <img src="icons/Gantt.png" alt="Gantt Chart Icon"/>
+      <div class="module-title">Gantt Chart</div>
+    </a>
+    </a>
+<a href="Color-Setting.html" class="module-card">
+      <img src="icons/Color.png" alt="Color Setting Icon"/>
+      <div class="module-title">Color Setting</div>
+    </a>
+</a>
+       <a href="Import-XER.html" class="module-card">
+      <img src="icons/IMPORTXER.png" alt="IMPORT XER Icon"/>
+      <div class="module-title">Import XER</div>
+    </a>
+        </a>
+       <a href="Export-XER.html" class="module-card">
+      <img src="icons/EXPORTXER.png" alt="Export XER Icon"/>
+      <div class="module-title">Export XER</div>
+    </a>
+</a>
+       <a href="Resource-Generation.html" class="module-card">
+      <img src="icons/ResourceGeneration.png" alt="Resource Generation Icon"/>
+      <div class="module-title">Resource Generation</div>
+    </a>
+</a>
+       <a href="Export-XER.html" class="module-card">
+      <img src="icons/EXPORTXER.png" alt="Export XER Icon"/>
+      <div class="module-title">Export XER</div>
+    </a>
+
+    </a>
+       <a href="AI-Assistant.html" class="module-card">
+      <img src="icons/AI Assistant.png" alt="AI-Assistant Icon"/>
+      <div class="module-title">AI Assistant</div>
+    </a>
+
+  </div>
+</div>
+  <footer>
+    © 2025 C3 – All rights reserved.
+  </footer>
+</body>
+</html>
